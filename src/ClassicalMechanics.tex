@@ -96,7 +96,7 @@
 			\item The laws of physics at any point in time will remain the same.
 			\item All coordinate systems in uniform rectilinear motion with respect to an inertial coordinate system are themselves inertial as well.
 		\end{itemize}
-		To understand this, assume we define an inertial coordinate system somewhere in the New Mexico desert. Then, assume that we find ourselves trapped in a windowless RC van such that we cannot see outside. Would we be able to make experiments, such as juggling illegal Schedule I narcotics, to determine whether the van is moving in a straight line at constant speed, or staying at rest? The answer is no. Why? Let us elaborate using a more refined framework.
+		To understand this, assume we define an inertial coordinate system somewhere on the surface of the Earth. Then, assume the room we are in has no windows making it impossible to see outside. Would we be able to make experiments, such as juggling illegal Schedule I narcotics, to determine whether the room is moving in a straight line at constant speed, or staying at rest? The answer is no. Why? Legally, said narcotics are illegal. Physically, let us elaborate using a more refined framework.
 		
 		\begin{defn}
 			A \textbf{Galilean space-time structure} or \textbf{Galilean space} is given by the following three elements:
@@ -193,8 +193,111 @@
 			\boxed{\ddot{\vec{x}} = \vec{a} = \vec{F} \left(\vec{x}, \dot{\vec{x}}, t \right)}
 		\end{equation}
 		By Galileo's principle of relativity, there is a selected inertial coordinate system in space-time whose Galilean transform, when applied to all world lines of the points of a mechanical system, yields the world lines of the same system with \textit{new initial conditions}. This fact implies that $\vec{F}\left(\vec{x}, \dot{\vec{x}}, t\right)$ is invariant with respect to the group of Galilean transforms. Moreover, invariance with respect to time indicates that \textit{the laws of physics remain constant}. 
-		\begin{exmp} \textit{Invariance over time} \\
-			Let $\vec{x} = \phi (t)$ be a solution to $\ddot{\vec{x}} = \vec{F} \left(\vec{x}, \dot{\vec{x}}, t \right)$. Then, $\forall \, s \in \R, \quad \vec{x} = \phi \left(t+s\right)$ is also a solution.
+		\begin{exmp} \textit{Time invariance} \\
+			Let $\vec{x} = \vec{\phi} (t)$ be a solution to $\ddot{\vec{x}} = \vec{F} \left(\vec{x}, \dot{\vec{x}}, t \right)$. Then, $\forall \, s \in \R, \quad \vec{x} = \vec{\phi} \left(t+s\right)$ is also a solution.
 		\end{exmp}
-		It follows that inertial coordinate systems will not require time dependence for equation (\ref{eq:NewtonEquation}), implying that $\ddot{\vec{x}} = \phi \left(\vec{x}, \dot{\vec{x}}\right)$.
+		It follows that inertial coordinate systems will not require time dependence for equation (\ref{eq:NewtonEquation}), implying that $\ddot{\vec{x}} = \vec{\Phi} \left(\vec{x}, \dot{\vec{x}}\right)$
+		\begin{exmp} \textit{Spatial translation invariance}\\
+			Invariance implies that \textit{space is homogeneous}, meaning that the laws of physics are equivalent for any point chosen in physical space. More explicitly, $ \vec{x}_i = \vec{\phi}_i (t) $ for $ i \in \{1, \, \dots, n\}$ is the motion of some system with $n$ particles satisfying $\ddot{\vec{x}} = \vec{F} \left( \vec{x}, \dot{\vec{x}}, t \right)$. Hence, $\forall \, \vec{r} \in \R^3$ it follows that the motion $\vec{\phi}_i (t) + \vec{r}$ for $i \in \{1, \, \dots, n\}$ also satisfies $\ddot{\vec{x}} = \vec{F} \left( \vec{x}, \dot{\vec{x}}, t \right)$, meaning that the inertial coordinate system must only be dependent on \textit{relative coordinates} $\vec{x}_j - \vec{x}_k$
+		\end{exmp}
+		Furthermore, if we assume a system under uniform motion such that $\ddot{\vec{x}}_i$ and $\vec{x}_j - \vec{x}_k$ remain unchanged, and add a fixed velocity vector $\vec{v}$ to each $\dot{\vec{x}}_j$, then the inertial coordinate system depends only on \textit{relative velocities} where $\ddot{\vec{x}} = \vec{f} \left( \{\vec{x}_j - \vec{x}_k, \,\dot{\vec{x}}_j - \dot{\vec{x}}_k\}\right)$ for $i,j,k \in \{1, \, \dots, n\}$
+		\begin{exmp} \textit{Rotational invariance} \\
+			If rotations remain invariant in three dimensions, then it follows that \textit{space is isotropic} such that no direction is preferred. So, if $\vec{\phi}_i : \, \R \to \R^3$ for $i \in \{ 1, \, \dots, n\}$ is a motion of a system of particles satisfying $\ddot{\vec{x}} = \vec{F} \left( \vec{x}, \dot{\vec{x}}, t \right)$, and $G: \, \R^3 \to \R^3$ is an orthogonal transformation, then the motion given by $G \vec{\phi}_i : \, \R \to \R^3$ for $i \in \{1, \, \dots, n\}$ implies that
+			$$ \vec{F} \left(G \vec{x}, G \dot{\vec{x}} \right) = G \vec{F} \left(\vec{x}, \dot{\vec{x}} \right)$$ 
+		\end{exmp}
+		\begin{thm}
+			Single particle mechanical systems in an inertial coordinate system will have their acceleration equal to zero.
+		\end{thm}
+		\begin{proof}
+			Assume we have a particle with acceleration $\ddot{\vec{x}}_1 \left(t\right)= \vec{a}_1 \neq \vec{0}$ in some inertial coordinate system, and the same particle is observed with acceleration $\ddot{\vec{x}}_2 \left( t\right) = \vec{a}_2 \neq \vec{0}$ in another inertial coordinate system for time some $t \in \R$. It follows that the difference in velocity of the particle in the first system in relation to its velocity on the second system is given by
+			$$ \vec{V} = \vec{v}_1 (t) - \vec{v}_2 (t)  $$
+			If an observer sees a particle in an inertial frame, then the observer must also be on an inertial coordinate system by definition. Therefore, $\vec{V}$ is constant and hence not time dependent. Now recall that acceleration is the second derivative of motion with respect to time, implying that
+			$$ \frac{d\vec{V}}{dt} = \frac{d \vec{v}_1 (t)}{dt} - \frac{d \vec{v}_2(t)}{dt} $$
+			Which directly implies that $\vec{a}_1 = \vec{a}_2$ for $\frac{d\vec{V}}{dt} = 0$ to hold if the coordinate systems are inertial, so the observer would see the particle experiencing no acceleration.
+		\end{proof}
+		\begin{thm}
+			If a mechanical system consists of two particles in some inertial coordinate system where $\dot{\vec{x}}_1 \left(t_0\right) = \dot{\vec{x}}_2 \left(t_0\right) = \vec{0}$, then their mutual distance and direction will remain invariant under Galilean transformations (They remain on the same line).
+		\end{thm}
+		\begin{proof}
+			From time and spatial translation invariance, we can assume that
+			$$ \ddot{\vec{x}}_i = \vec{f}_i \left(  \vec{x}_1 - \vec{x}_2, \,\,\dot{\vec{x}}_1 - \dot{\vec{x}}_2\right) \quad \text{for } i \in \{1,2\} $$ 
+			If for some $t_0$ it follows that $\left(\vec{x}_1 - \vec{x}_2\right) \cdot \left(\dot{\vec{x}}_1 - \dot{\vec{x}}_2\right) = \left|\left| \vec{x}_1 - \vec{x}_2\right|\right| \cdot \left|\left| \dot{\vec{x}}_1 - \dot{\vec{x}}_2 \right|\right|$, then the rotation Galilean transform $G$ about the vector $\vec{x}_1 - \vec{x}_2$ implies invariance for both vectors. Furthermore, by rotational invariance we have that
+			\begin{align*}
+				\vec{f}_i \left(\vec{x}_1 - \vec{x}_2, \,\, \dot{\vec{x}}_1 -  \dot{\vec{x}}_2 \right) &= \vec{f}_i \left( G \left(\vec{x}_1 - \vec{x}_2\right), G \left(\dot{\vec{x}}_1 - \dot{\vec{x}}_2 \right)\right) \\
+				&= G \vec{f}_i  \left(\vec{x}_1 - \vec{x}_2, \,\, \dot{\vec{x}}_1 -  \dot{\vec{x}}_2  \right) 
+			\end{align*}
+			So for the same $t_0$ it follows that the accelerations for both particles will also be parallel to $\vec{x}_1 - \vec{x}_2$, meaning the distance and direction between both particles remains invariant under any Galilean transform.
+		\end{proof}
+	
+		\newpage
+		
+		\begin{exmp}
+			\textit{Falling garlic bread} \\
+			Assume you spend months planning the launch of your tasty garlic bread into the Earth's stratosphere with a weather balloon. As expected, your garlic bread will reach a height of about $\vec{x}(t)=35,000$ m, where the environmental pressure is significantly lower than at the surface. The lower pressure then will make the balloon burst, allowing the garlic bread to fall back to the surface. From experiments, we know that the garlic bread will experience a constant vertical acceleration of
+			$$ \ddot{x} = -9.81 \text{ m}\cdot\text{s}^{-1}$$
+			We may now introduce the potential energy of the garlic bread $U=gx$, where $g = 9.81 \text{ m}\cdot\text{s}^{-1}$ such that
+			$$ \ddot{x} = - \frac{dU}{dx}$$
+			For $N-$dimensional Euclidean spaces $E^N$, we assume that the potential energy $U:\, E^N \to \R$ is differentiable with respect to $E^N$ such that $\vec{\nabla} U = \frac{\partial U}{\partial \vec{x}}$ is the potential gradient vector. Let $E^N = E^{n_1} \times \dots \times E^{n_k}$ be the direct product of euclidean spaces. We denote a point $\vec{x} \in E^N$ by a tuple of $k$ components as $\vec{x} = \left( \vec{x}_1, \, \dots, \vec{x}_k \right)$, and similarly to the potential gradient vector $\vec{\nabla} U = \left( \frac{\partial U}{\partial \vec{x}_1}, \, \dots, \frac{\partial U}{\partial x_k}\right)$. Particularly in the case where $x_1, \, \dots, x_N$ are Cartesian coordinates in $E^N$, the components of the potential gradient vector become $\frac{\partial U}{\partial x_1}, \, \dots, \frac{\partial U}{\partial x_N}$. 
+			It is clear by experimentation that the radius vector for our garlic bread with respect to an origin established on the surface of the Earth will satisfy the following equation:
+			$$ \ddot{\vec{x}} = - \frac{\partial U}{\partial \vec{x}}$$
+			Where $U = -\left(\vec{g}, \vec{x}\right)$. 
+			
+			It makes sense to now assume the garlic bread goes much further than this making $x >> 35$ km. To more precisely determine its movements, we must assume the origin of our coordinate system lies at the center of the Earth, meaning the vertical vector becomes a radius vector $\vec{r}$, and we assume a constant distance to the Earth $r_0$ such that $\left|\left| \vec{r} \right|\right| = r_0 + x$. We can now define the gravitational acceleration with an inverse square law of the radius
+			$$ \ddot{x} = -g \frac{r_0^2}{\left(r_0 + x\right)^2}$$
+			Now, considering the potential energy $U = -\frac{g r_0^2}{r_0 + x}$, this yields
+			$$ \ddot{x} = \frac{U}{r_0 + x}$$ 
+		\end{exmp}
+		\begin{exe}
+			Determine the escape velocity $v_{esc}$ of the garlic bread. Recall that the escape velocity is the minimal speed for an object to escape the gravitational potential of the Earth such that it does not return to the surface. (\textit{Hint: Integrals are your friends.})
+		\end{exe}
+		We end this chapter with the introduction of \textbf{conservative systems}, where the difference in total energy between any two events is always zero. Let $E^{3n} = E^3 \times \dots \times E^3$ be the configuration space of a system of $n$ particles in three-dimensional Euclidean space $E^3$. Now suppose the potential energy $U: \, E^{3n} \to \R$ is a differentiable function, and let $m_1, \dots, m_n$ be positive real numbers representing the mass of each particle. The motion of $n$ particles of respective masses $m_1, \dots, m_n$ in the potential field with potential energy $U$ is given by the second degree ordinary differential equation
+		\begin{equation}
+			\label{eq:MotionMass}
+			\boxed{m_i \ddot{\vec{x}}_i = \frac{\partial U}{\partial \vec{x}_i}, \quad i \in \{1, \dots, n\}}
+		\end{equation}
+		\newpage
+		
+		\section{Equations of Motion}
+		\subsection{Constraints}
+		To continue, we must define a few useful concepts for the study of the equations of motion.
+		\begin{defn}
+			A system with \textbf{one degree of freedom} is described by a single second-order differential equation
+			\begin{equation}
+				\label{eq:OneDegree}
+				\boxed{\ddot{x} = f(x), \quad x \in \R}
+			\end{equation}
+		\end{defn}
+		\begin{defn}
+			The \textbf{kinetic energy} of a system with one degree of freedom is
+			\begin{equation}
+				\label{eq:KineticOneDegree}
+				\boxed{T\left(\dot{x}\right) = \frac12 \dot{x}^2}
+			\end{equation}
+		\end{defn}
+		\begin{defn}
+			The \textbf{potential energy} of a system with one degree of freedom is
+			\begin{equation}
+				\label{eq:PotentialOneDegree}
+				\boxed{U(x) = -\int_{x_0}^x f(u)du}
+			\end{equation}
+		\end{defn}
+		\begin{defn}
+			The \textbf{total energy} of a system is 
+			\begin{equation}
+				\label{eq:TotalEnergy}
+				\boxed{E \left(x, \dot{x}\right) = T\left(\dot{x}\right)+U(x)}
+			\end{equation}
+		\end{defn}
+		From these definitions, it is clear that the potential energy determines the function that represents $\ddot{x}$.
+		\begin{thm}
+			The law of conservation of energy implies that the total energy of particles experiencing motion in a conservative system will not vary with respect to time. 
+		\end{thm}
+		\begin{proof}
+			\begin{align*}
+				\frac{d}{dt} \left( T\left(\dot{x} \right) + U(x)\right) &= \dot{x}\ddot{x} + \frac{dU}{dx} \dot{x}\\ 
+				&= \dot{x} \left( \ddot{x} - f(x)\right)
+			\end{align*}
+		\end{proof}
+		\subsection{Angular Momentum}
+		\subsection{Systems of Particles}
 \end{document}
