@@ -1,7 +1,7 @@
 %UsePackages
 \newcommand\hmmax{0}
 \newcommand\bmmax{0}
-\usepackage{amsmath, amsfonts, amssymb, amsthm, array, bm, chemfig, cite, circuitikz, etoolbox, empheq, enumerate, epsfig, epstopdf, fancyhdr, fge, float, listings, lstautogobble, mathtools, makecell, mathrsfs, mathtools, multirow, multicol, nicefrac, placeins, setspace, siunitx, subcaption, stmaryrd, textcomp, tabto, tikz, titling, upgreek, url, xcolor, tikz}
+\usepackage{amsmath, amsfonts, amssymb, amsthm, array, bm, chemfig, cite, circuitikz, etoolbox, empheq, enumerate, epsfig, epstopdf, fancyhdr, fge, float, listings, lstautogobble, mathtools, makecell, mathrsfs, mathtools, multirow, multicol, nicefrac, physics, placeins, setspace, siunitx, subcaption, stmaryrd, textcomp, tabto, tikz, titling, upgreek, url, xcolor, tikz}
 \usepackage[pagebackref]{hyperref}
 \usepackage[font=singlespacing, 
 font={small}]{caption}
@@ -115,17 +115,6 @@ font={small}]{caption}
 	\newtheorem*{note}{Note}
 	\newtheorem*{exe*}{Exercise}
 }
-
-%Paired Delimiters
-\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
-\makeatletter
-\let\oldabs\abs
-\def\abs{@ifstar{\oldabs}{\oldabs*}}
-
-\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
-\makeatother
-\let\oldnorm\norm
-\def\norm{@if{\oldnorm}{\oldnorm*}}
 
 %Redefining Proof QED symbol
 \makeatletter

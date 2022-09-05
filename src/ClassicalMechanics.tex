@@ -19,8 +19,182 @@
 	% Page numbering [Main content]
 	\setcounter{page}{1}
 	\cfoot{\thepage}
+
 	
-	
-	
-	
+	\part{Newtonian Mechanics}
+		\section{Fundamentals}
+		The basis of our understanding classical mechanics relies on approximation and simplification of observed phenomena relating to human events. This means that classical mechanics deals with assumptions on physical events that are occur at relatively normal speeds over relatively normal distances. Hence, once these simplifications are thoroughly understood, it becomes easier to focus on details that modify them and broaden our understanding of physics at extreme speeds and distances. It is therefore necessary to establish a set of fundamental facts and definitions we may use throughout.
+		
+		\begin{defn}
+			The set of all real numbers is denoted $\R$.
+		\end{defn}
+		\begin{defn}
+			An $n-$dimensional \textbf{real vector space} $\R^n$, whose elements are called \textbf{vectors}, is defined as an algebraic modular structure with the following axioms:
+			\begin{table}[h]
+				\begin{tabular}{|c|c|}
+					\hline
+					\textbf{Axiom} & \textbf{Implication} \\ \hline
+					Associative law of vector addition & $\forall \, \vec{u}, \vec{v}, \vec{w} \in \R^n: \quad \vec{u} + \left(\vec{u} + \vec{w}\right) = \left(\vec{u} + \vec{v}\right) + \vec{w}$ \\ \hline
+					Commutative law of vector addition & $\forall \, \vec{u}, \vec{v} \in \R^n: \quad \vec{u} + \vec{v} = \vec{v} + \vec{u}$ \\ \hline
+					Identity element of vector addition & $\exists\, \vec{0}, \in \R^n, \,\, \forall \, \vec{v} \in \R^n: \quad \vec{0} + \vec{v} = \vec{v}$ \\ \hline
+					Inverse elements of vector addition & $\forall \, \vec{v} \in \R^n, \,\, \exists\, -\vec{v} \in \R^n: \quad \vec{v} + \left(-\vec{v}\right) = \vec{0}$ \\ \hline
+					Associative law of scalar multiplication & $\forall \,a, b \in R, \,\, \forall\, \vec{v} \in \R^n: \quad a\left(b\vec{v}\right) = \left(ab\right) \vec{v}$ \\ \hline
+					Identity element of scalar multiplication & $\exists \,1 \in \R, \,\,\forall\, \vec{v} \in \R^n:\quad 1\vec{v} = \vec{v}$                     \\ \hline
+					First distributive law & $\forall \, a \in \R, \,\, \forall \,\vec{v}, \vec{u} \in \R^n: \quad a\left(\vec{u} + \vec{v}\right) = a\vec{u} + a\vec{v}$ \\ \hline
+					Second distributive law & $\forall \, a, b \in R, \,\, \forall \, \vec{v} \in \R^n: \quad \left(a+b\right) \vec{v} = a\vec{v} + b\vec{v}$\\ \hline
+				\end{tabular}
+			\end{table}
+		\end{defn}
+		\begin{defn}
+			An $n-$dimensional \textbf{affine space} $A^n$, whose elements are called \textbf{points}, is a geometric structure associated with the vector space $\R^n$ by the linear map $A^n \times \R^n \to A^n: \,\, \left(a,\vec{v}\right) \mapsto a + \vec{v}$ with the following properties:
+			\begin{table}[h]
+				\begin{tabular}{|c|c|}
+					\hline
+					\textbf{Property} & \textbf{Implication} \\ \hline
+					Right identity & $\forall \, a \in A^n, \,\, \vec{0} \in \R^n: \quad a + \vec{0} = a$ \\ \hline
+					Associativity & $\forall \, \vec{v}, \vec{w} \in \R^n, \,\, \forall \, a \in A^n: \quad \left(a+\vec{v} \right) + \vec{w} = a + \left(\vec{v} + \vec{w} \right)$ \\ \hline
+					Free, transitive action &  $\forall \, a \in A^n, \,\, \forall \vec{v} \in \R^n: \quad \R^n \to A^n: \, \vec{v} \mapsto a + \vec{v} $ is bijective \\ \hline
+					Injective translations & $\forall \, \vec{v} \in \R^n, \,\, \forall a \in A^n: \quad A^n \to A^n: \, a \mapsto a + \vec{v}$ is bijective. \\ \hline
+				\end{tabular}
+			\end{table}			
+		\end{defn}
+		Affine spaces differ from vector spaces particularly in that they do not have a preferred origin. This implies that for any two arbitrary points $a, b \in A^n$, there is no defined sum. Instead, their difference defines a vector in $\R^n$.
+		\begin{defn}
+			A \textbf{vector} $v \in \R^n$ is given by the difference between two points $a, b \in A^n$ such that
+			\begin{equation}
+				\label{eq:VectorFromAffine}
+				\vec{v} = b - a
+			\end{equation}
+		\end{defn}
+		\begin{defn}
+			The \textbf{inner product space} is defined as a vector space $\R^n$ such that the map $\left\langle \cdot, \cdot\right\rangle \, : \, \R^n \times \R^n \to \R$ satisfies the following three properties $\forall\,  \vec{u}, \vec{v}, \vec{w} \in \R^n$ and $\forall \, a, b, \in \R$:
+			\begin{table}[h]
+				\begin{tabular}{|c|c|}
+					\hline
+					\textbf{Property} & \textbf{Implication} \\ \hline
+					Symmetry & $\left\langle \vec{u}, \vec{v} \right\rangle = \left\langle \vec{v}, \vec{u} \right\rangle$ \\ \hline
+					Linearity in first element & $\left\langle a\vec{u} + b\vec{v}, \vec{w} \right\rangle = a \left\langle \vec{u}, \vec{w} \right\rangle + b\left\langle \vec{v}, \vec{w} \right\rangle$ \\ \hline
+					Positive-definite & $ \vec{u} \neq \vec{0}\implies \left\langle \vec{u}, \vec{u} \right\rangle > 0 $ \\ \hline
+				\end{tabular}
+			\end{table}
+		\end{defn}
+		\begin{defn}
+			The \textbf{distance} between two points $a,b$ in some affine space $A^n$ is defined as
+			\begin{equation}
+				\label{eq:EuclidDistance}
+				\rho\left(a,b\right) = \left|\left| a-b \right|\right| = \sqrt{\sum_{i=1}^{n} \left(a_i - b_i\right) \cdot \left(a_i - b_i\right) }
+			\end{equation}
+			And label the affine space as a \textbf{Euclidean space}.
+		\end{defn}
+		\begin{defn}
+			A \textbf{coordinate system} in $\R^n$ is given by identifying a specific origin and some basis that serves to indicate used axes and their direction, as well as how unit vectors are defined within $\R^n$.
+		\end{defn}
+		
+		\subsection{Galileo's Relativity Principle}
+		Galileo asserted that there exists \textbf{inertial coordinate systems} with the following properties:
+		\begin{itemize}
+			\item The laws of physics at any point in time will remain the same.
+			\item All coordinate systems in uniform rectilinear motion with respect to an inertial coordinate system are themselves inertial as well.
+		\end{itemize}
+		To understand this, assume we define an inertial coordinate system somewhere in the New Mexico desert. Then, assume that we find ourselves trapped in a windowless RC van such that we cannot see outside. Would we be able to make experiments, such as juggling illegal Schedule I narcotics, to determine whether the van is moving in a straight line at constant speed, or staying at rest? The answer is no. Why? Let us elaborate using a more refined framework.
+		
+		\begin{defn}
+			A \textbf{Galilean space-time structure} or \textbf{Galilean space} is given by the following three elements:
+			\begin{enumerate}
+				\item The \textbf{universe} is said to be an affine space $A^4$ whose elements are called \textbf{world-points} or \textbf{events}, and is directly associated with the vector space $\R^4$.
+				\item \textbf{Time} is a linear mapping $t: \R^4 \to \R$, with \textbf{time intervals} given between two events $a, b \in A^4$ as $t\left(b-a\right)$. If $t(b-a) =0$ then $a,b$ are \textbf{simultaneous events}.
+				\item The \textbf{distance} between two simultaneous events is given by an inner product on the linear subspace $\R^3 \subset \R^4$, defined as the kernel for linear mapping $t$ for two events $a, b \in A^3$ as given by equation (\ref{eq:EuclidDistance}). 
+			\end{enumerate}
+		\end{defn}
+		
+		\begin{defn}
+			The \textbf{Galilean group} is the group of all transformations, called \textbf{Galilean transformations}, of a Galilean space which preserve its structure, meaning they preserve intervals of time and distance between simultaneous events.
+		\end{defn}
+		\begin{defn}
+			A \textbf{Galilean coordinate space} is the direct product $(t, \vec{x}) \in \R \times \R^3: \,\,t \in \R, \vec{x} \in \R^3$, where $\R^3$ has a fixed inner product.
+		\end{defn}
+		We now provide examples of Galilean transformations on Galilean coordinate spaces.
+		\begin{exmp}
+			\textit{Uniform motion with velocity $\vec{v}$}
+			$$ g_{1} \left(t, \vec{x}\right) = \left(t, \vec{x} + \vec{v}t \right) \quad \forall \, t \in \R, \, \forall \, \vec{x} \in \R^3$$
+		\end{exmp}
+		\begin{exmp}
+			\textit{Translation of the origin by $(a, \vec{u})$}
+			$$ g_2 \left(t, \vec{x}\right) = \left(t+a, \,\vec{x} + \vec{u}\right), \quad \forall \, t \in \R, \, \forall \, \vec{x} \in \R^3$$
+		\end{exmp}
+		\begin{exmp}
+			\textit{Rotation of coordinate axes for orthogonal transform $G: \R^3 \to \R^3$}
+			$$ g_3 \left( t, \vec{x} \right) = \left(t,\, G \vec{x} \right), \quad \forall \, t \in \R, \forall \, \vec{x} \in \R^3$$ 
+		\end{exmp}
+		\begin{thm}
+			All Galilean transformations $g: \R \times \R^3 \to \R \times \R^3$ can be uniquely written as a composition of a rotation $g_3$, translation $g_2$, and uniform motion $g_1$ transformation such that $g = g_1 \circ g_2 \circ g_3$.
+		\end{thm}
+		\begin{proof}
+			Let us define a Galilean transform $g: \, \R \times \R^3 \to \R \times \R^3 $ such that $R \in O\left(3\right), \tau \in \R,$ and $v, y \in \R^3$.
+			The most general $\R$-affine map we can define is
+			\begin{align*}
+				g \left(t, \vec{x} \right) &=  A\left(t, \vec{x} \right) + \left( \tau, \vec{y}\right)\\
+				&= \left( A_{11} t + A_{12} \vec{x}, A_{21} t + A_{22} \vec{x} \right) 
+			\end{align*}
+			In order for distance to be preserved, we know that $A_{22}$ must be an orthogonal matrix. We must also make sure that the time intervals are equally preserved. Assume we thus have two events $\vec{x}_1, \vec{x}_2$ such that
+			$$ A_{11} \left( t_2 - t_1\right) + A_{12} \left(\vec{x}_2 - \vec{x}_1 \right) = t_2 - t_1$$
+			We thus draw the implication that for all $\vec{x}_1, \vec{x}_2$ to hold, we need $A_{12} = 0$ which directly implies $A_{11} = 1$. Finally, the last component is the velocity defined with the linear map $\R \to \R^3$, showing that indeed, 
+			$$ g : \, 
+			\begin{pmatrix}
+				t \\ \vec{x}
+			\end{pmatrix} \mapsto 
+			\begin{pmatrix}
+				1 & 0 \\
+				\vec{v} & R
+			\end{pmatrix} 
+			\begin{pmatrix}
+				t \\ \vec{x}
+			\end{pmatrix} +
+			\begin{pmatrix}
+				\tau \\ \vec{y}
+			\end{pmatrix}
+			$$
+			Furthermore, we note the rotation group in $\R^3$ has 3 dimensions in itself, uniform motion includes a boost and spatial translation so $2\cdot 3 = 6$ dimensions, and lastly time translation is $1$ dimensional, which implies that the Galilean transformation group is 10-dimensional.
+			
+		\end{proof}
+		\begin{defn}
+			A \textbf{Galilean coordinate system on a set $M$} is an injective linear map $\varphi: \, M \to \R \times \R^3$. 
+		\end{defn}
+		\begin{defn}
+			We say that $\varphi_2$ experiences \textbf{uniform motion} with respect to $\varphi_1$ if the linear map $$\varphi_1 \circ \varphi_2^{-1}: \, \R\times \R^3\to \R \times \R^3$$ is a Galilean transform.  
+		\end{defn} 
+		\begin{defn}
+			A \textbf{motion} is a differentiable mapping $\vec{x}: \, I \to \R^n$ for some real interval $I$. 
+		\end{defn}
+		\begin{defn}
+			The \textbf{velocity vector $\vec{v} \in \R^n$} is given by the first derivative with respect to time of a motion $\vec{x}$ such that
+			\begin{equation}
+				\label{eq:VelocityVector}
+				\vec{v} \left(t_0 \right) = \dot{\vec{x}} \left( t_0 \right) = \left. \frac{d\vec{x}}{dt} \right|_{t = t_0} = \lim_{h\to 0} \frac{\vec{x} \left(t_0 + h\right) - \vec{x} \left( t_0\right)}{h}
+			\end{equation}
+		\end{defn}
+		\begin{defn}
+			The \textbf{acceleration vector $\vec{a} \in \R^n$} is given by the second derivative with respect to time of a motion $\vec{x}$ such that
+			\begin{equation}
+				\label{eq:AccelerationVector}
+				\vec{a} \left(t_0 \right) = \dot{\vec{v}} \left( t_0 \right) = \ddot{\vec{x}}\left(t_0\right) =\left. \frac{d^2\vec{x}}{dt^2} \right|_{t = t_0}
+			\end{equation}
+		\end{defn}
+		\begin{defn}
+			A \textbf{world line} is a curve in $\R \times \R^3$ Galilean space which appears in every Galilean coordinate system as the graph of motion $\vec{x} : \, \R \to \R^3$
+		\end{defn}
+		Therefore, we may obtain the \textbf{motion of a system of $n$ particles} by first noting that each one has a motion mapping $\vec{x}_i = \R \to \R^3$ for $i \in \{ 1, \, \dots, n\}$ defining their respective world lines. We take these motion mappings to yield a single mapping $\vec{x}: \, \R \to \R^N$ for $N = 3n$ of the time axis into the direct product of $n$ copies of $\R^n$.
+		
+		\newpage
+		\subsection{Newton's Laws of Motion}
+		Recall that all motions of a system are uniquely determined by their initial positions $\vec{x} \left(t_0\right) \in \R^N$ and initial velocities $\vec{v} \left(t_0\right) \in \R^N $. Particularly, initial positions and velocities will uniquely determine the motion of a system, where a function $\vec{F}: \, \R^N \times \R^N \times \R \to \R^N$ exists such that
+		\begin{equation}
+			\label{eq:NewtonEquation}
+			\boxed{\ddot{\vec{x}} = \vec{a} = \vec{F} \left(\vec{x}, \dot{\vec{x}}, t \right)}
+		\end{equation}
+		By Galileo's principle of relativity, there is a selected inertial coordinate system in space-time whose Galilean transform, when applied to all world lines of the points of a mechanical system, yields the world lines of the same system with \textit{new initial conditions}. This fact implies that $\vec{F}\left(\vec{x}, \dot{\vec{x}}, t\right)$ is invariant with respect to the group of Galilean transforms. Moreover, invariance with respect to time indicates that \textit{the laws of physics remain constant}. 
+		\begin{exmp} \textit{Invariance over time} \\
+			Let $\vec{x} = \phi (t)$ be a solution to $\ddot{\vec{x}} = \vec{F} \left(\vec{x}, \dot{\vec{x}}, t \right)$. Then, $\forall \, s \in \R, \quad \vec{x} = \phi \left(t+s\right)$ is also a solution.
+		\end{exmp}
+		It follows that inertial coordinate systems will not require time dependence for equation (\ref{eq:NewtonEquation}), implying that $\ddot{\vec{x}} = \phi \left(\vec{x}, \dot{\vec{x}}\right)$.
 \end{document}
